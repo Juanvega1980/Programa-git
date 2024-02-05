@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Gestor De Materiales</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        /* Estilos CSS aquí... */
+        
+        /* Establecemos el cuerpo como contenedor flex para centrar todo */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #ffffff;
+            color: #000;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Centra horizontalmente */
+            justify-content: center; /* Centra verticalmente */
+            height: 100vh;
+        }
+
+        /* Estilos de sección, formulario y botones... */
+
+        /* Agregamos un estilo para centrar la sección verticalmente */
+        section {
+            background-color: #ffffff;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            text-align: center; /* Centra el contenido del formulario */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Gestor De Materiales</h1>
+        <div class="logo-container">
+            <img src="logo.png" alt="TSG The IT Experts" width="150" class="logo">
+        </div>
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#">Inicio</a></li>
+            <li><a href="#">Inventario Material</a></li>
+            <li><a href="#">Solicitudes</a></li>
+            <li><a href="#">Usuarios</a></li>
+            <li><a href="#">Administración</a></li>
+        </ul>
+    </nav>
+
+    <section>
+        <h2>Iniciar Sesión</h2>
+        <form action="procesar_login.php" method="POST">
+            <label for="usuario">Usuario:</label>
+            <input type="text" id="usuario" name="usuario" required><br>
+
+            <label for="contrasena">Contraseña:</label>
+            <input type="password" id="contrasena" name="contrasena" required><br>
+
+            <button type="submit" class="btn-blue" id="btnIniciarSesion">Iniciar Sesión</button>
+        </form>
+
+        <a href="registro.html">
+            <button type="button" class="btn-register" id="btnRegistro">Registrar Nuevo Usuario</button>
+        </a>
+    </section>
+
+    <script>
+        document.getElementById("btnIniciarSesion").addEventListener("click", function (event) {
+            event.preventDefault();
+            // Aquí puedes realizar la lógica de inicio de sesión y redirigir al usuario
+            // Por ejemplo, redirigir al usuario a una página de bienvenida
+            window.location.href = "bienvenida.html";
+        });
+
+        document.getElementById("btnRegistro").addEventListener("click", function () {
+            // Aquí puedes realizar la lógica para redirigir al usuario a la página de registro
+            window.location.href = "registro.html";
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Gestor De Materiales - Registro de Usuarios</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.0/css/all.min.css">
+    <style>
+        /* Estilos CSS para la página de registro de usuarios */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f5f5f5; /* Cambiar el fondo a un gris suave */
+            color: #333; /* Texto en un tono de gris más oscuro */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        header {
+            background-color: #ffffff; /* Cambiar el fondo a blanco (#ffffff) */
+            color: #000; /* Texto en negro (#000) */
+            text-align: center;
+            padding: 20px 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            font-size: 20px; /* Reducir el tamaño de la fuente */
+            margin: 0;
+        }
+
+        /* ... Estilos de los iconos sociales, navegación, etc. */
+
+        section {
+            background-color: #fff;
+            padding: 20px;
+            margin: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+        }
+
+        h2 {
+            color: #0074e4;
+            font-size: 18px; /* Reducir el tamaño de la fuente */
+            margin: 0 0 20px 0;
+        }
+
+        label {
+            color: #333;
+            display: block;
+            font-size: 16px; /* Reducir el tamaño de la fuente */
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .btn-blue {
+            background-color: #ffffff; /* Cambiar el fondo a blanco (#ffffff) */
+            color: #000; /* Texto en negro (#000) */
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        /* ... Estilos específicos para el formulario de registro de usuarios. */
+
+        /* Personalizar estilos del botón de registro */
+        .btn-register {
+            background-color: #ffffff; /* Cambiar el fondo a blanco (#ffffff) */
+            color: #000; /* Texto en negro (#000) */
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .btn-register:hover {
+            background-color: #ffffff; /* Cambiar el fondo a blanco (#ffffff) */
+            color: #000; /* Texto en negro (#000) */
+        }
+
+        /* Centrar el logo de TSG al costado izquierdo */
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-img {
+            width: 150px;
+            margin-right: 20px;
+        }
+
+        /* Estilo del botón de Superusuario */
+        .btn-superuser {
+            position: fixed;
+            top: 50%; /* Centrar verticalmente */
+            right: 0; /* Colocar a la derecha */
+            transform: translateY(-50%); /* Centrar verticalmente */
+            background-color: #0074e4; /* Azul de acento */
+            color: #fff; /* Texto en blanco */
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: right 0.5s; /* Animación de deslizamiento */
+        }
+
+        .btn-superuser:hover {
+            background-color: #005daa; /* Cambio de color al pasar el mouse */
+        }
+
+        /* Muestra el botón de superusuario al hacer clic en el botón de registro */
+        .show-superuser {
+            right: 20px; /* Muestra el botón de superusuario */
+        }
+
+        /* Estilo de la imagen de Nuevo Usuario */
+        .new-user-image {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            width: 100px; /* Tamaño de la imagen (más grande) */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="C:\Users\Juan Karlos\Desktop\ejemplo\logo.png" alt="TSG The IT Experts" class="logo-img">
+            <h1>Gestor De Materiales - Registro de Usuarios</h1>
+        </div>
+        <div class "social-icons">
+            <!-- Puedes mantener los mismos enlaces a redes sociales si es necesario. -->
+        </div>
+    </header>
+
+    <!-- La estructura y los elementos del formulario de registro de usuarios van aquí -->
+    <section>
+        <h2>Registro de Usuario</h2>
+        <form id="registroForm">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required><br>
+
+            <label for="apellidos">Apellidos:</label>
+            <input type="text" id="apellidos" name="apellidos" required><br>
+
+            <label for="identificacion">Identificación:</label>
+            <input type="text" id="identificacion" name="identificacion" required><br>
+
+            <label for="cargo">Cargo:</label>
+            <input type="text" id="cargo" name="cargo" required><br>
+
+            <label for="telefono">Número de Teléfono:</label>
+            <input type="tel" id="telefono" name="telefono" required><br>
+
+            <!-- Botones Guardar y Cancelar -->
+            <button type="button" class="btn-register" id="guardarUsuario">Guardar</button>
+            <button type="button" class="btn-register" id="cancelarRegistro">Cancelar</button>
+        </form>
+    </section>
+
+    <!-- Botón de Superusuario -->
+    <button type="button" class="btn-superuser" id="superusuario">Superusuario</button>
+
+    <!-- Imagen de Nuevo Usuario (más grande) -->
+    <img src="C:\Users\Juan Karlos\Desktop\ejemplo\nuevo usuario.png" alt="Nuevo Usuario" class="new-user-image">
+
+    <script>
+        document.getElementById("registrarUsuario").addEventListener("click", function () {
+            // Agrega lógica para procesar el registro de usuario aquí
+            // Muestra el botón de superusuario al hacer clic en el botón de registro
+            document.getElementById("superusuario").classList.add("show-superuser");
+        });
+
+        document.getElementById("superusuario").addEventListener("click", function () {
+            // Agrega lógica para el botón de superusuario aquí
+        });
+
+        document.getElementById("guardarUsuario").addEventListener("click", function () {
+            // Agrega lógica para guardar el usuario aquí
+        });
+
+        document.getElementById("cancelarRegistro").addEventListener("click", function () {
+            // Agrega lógica para cancelar el registro aquí
+        });
+    </script>
+</body>
+</html>
